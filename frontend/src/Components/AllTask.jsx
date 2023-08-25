@@ -4,7 +4,9 @@ const AllTask = () => {
   return (
     <div>
       <div className='flex'>
-        <div>Create</div>
+        <div className='w-[20rem]'>
+          <p className='bg-[green] font-bold decoration-white font-serif'> Create</p> 
+          </div>
         <div>Todo</div>
         <div>InProgress</div>
         <div>Done</div>
