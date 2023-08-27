@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 
 
 const initialState = {
@@ -8,7 +8,6 @@ const initialState = {
     tags: ["Others"],
     subTasks: [],
   };
-  
   const reducer = (state, action) => {
     switch (action.type) {
       case "title":
@@ -36,13 +35,32 @@ const initialState = {
         return state;
     }
   };
+  
 
 const Modals = () => {
+  const [state, setState] = useReducer(reducer, initialState);
   return (
     <div>
-        <Modal >
+        <p className='text-[1.2rem] font-[600]'>Title</p>
+          <input type="text" value={state.title} placeholder='Title' 
+          onChange={(e)=>setState({type: "title", payload: e.target.value })}/>
 
-        </Modal>
+          <input type="text"  value={state.description} placeholder='Description'
+          onChange={(e)=>setState({ type: "description", payload: e.target.value })} />
+          <br />
+          
+          <select placeholder="Select status"
+              value={state.task_status}
+              onChange={(e) =>
+                setState({ type: "task_status", payload: e.target.value })
+              }>
+                 <option value="todo">Todo</option>
+              <option value="in-progress">In-Progress</option>
+              <option value="done">Done</option>
+
+          </select>
+
+        
       
     </div>
   )
