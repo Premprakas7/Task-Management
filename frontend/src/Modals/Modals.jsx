@@ -40,16 +40,19 @@ const initialState = {
 const Modals = () => {
   const [state, setState] = useReducer(reducer, initialState);
   return (
-    <div>
-        <p className='text-[1.2rem] font-[600]'>Title</p>
-          <input type="text" value={state.title} placeholder='Title' 
+    <div className='mt-[1rem]'>
+        <p className='text-[1.2rem] font-[600] mt-[1rem]'>Title</p>
+          <input type="text" className=' h-[2rem] border-4' value={state.title} placeholder='Title' 
           onChange={(e)=>setState({type: "title", payload: e.target.value })}/>
 
-          <input type="text"  value={state.description} placeholder='Description'
+  <p className='text-[1.2rem] font-[600] mt-[1rem]'>Description</p>
+          <input type="text" className=' h-[2rem] border-4'  value={state.description} placeholder='Description'
           onChange={(e)=>setState({ type: "description", payload: e.target.value })} />
           <br />
           
+          <p className='text-[1.2rem] font-[600] mt-[1rem]'>Progress</p>
           <select placeholder="Select status"
+          className=' h-[2rem] border-4'
               value={state.task_status}
               onChange={(e) =>
                 setState({ type: "task_status", payload: e.target.value })
@@ -59,9 +62,13 @@ const Modals = () => {
               <option value="done">Done</option>
 
           </select>
-
-        
-      
+          <menu>
+          <menuitem type="checkbox" className=' h-[3rem]' value={state.tags}
+                  onChange={(value) =>
+                    setState({ type: "tags", payload: value })
+                  }>
+          </menuitem>
+          </menu>
     </div>
   )
 }

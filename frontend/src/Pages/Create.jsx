@@ -3,9 +3,8 @@ import Modals from '../Modals/Modals'
 
 const Create = () => {
   return (
-    <div>create
+    <div>
       <Modals/>
-      
     </div>
   )
 }
