@@ -60,15 +60,9 @@ const Modals = () => {
                  <option value="todo">Todo</option>
               <option value="in-progress">In-Progress</option>
               <option value="done">Done</option>
-
           </select>
-          <menu>
-          <menuitem type="checkbox" className=' h-[3rem]' value={state.tags}
-                  onChange={(value) =>
-                    setState({ type: "tags", payload: value })
-                  }>
-          </menuitem>
-          </menu>
+          
+         
     </div>
   )
 }
