@@ -57,7 +57,7 @@ const Modals = () => {
               onChange={(e) =>
                 setState({ type: "task_status", payload: e.target.value })
               }>
-                 <option value="todo">Todo</option>
+                <option value="todo">Todo</option>
               <option value="in-progress">In-Progress</option>
               <option value="done">Done</option>
           </select>
